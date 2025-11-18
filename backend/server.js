@@ -1,4 +1,4 @@
-const express = require("express");   // ✔ FIXED
+const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
@@ -15,36 +15,31 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(cookieParser());
 
-// Allow multiple origins
+// Allowed origins
 const allowedOrigins = [
     "https://assignmetadminpanel.vercel.app",
-    "https://assignmentflipr.vercel.app"
+    "https://assignmentflipr.vercel.app",
     "http://localhost:5173",
-    "http://localhost:5174",
-   
+    "http://localhost:5174"
 ];
 
 app.use(
     cors({
         origin: function (origin, callback) {
             if (!origin) return callback(null, true);
-
             if (allowedOrigins.includes(origin)) {
                 callback(null, true);
             } else {
                 callback(new Error("Not allowed by CORS"), false);
             }
         },
-        credentials: true,
-        allowedHeaders: ["Content-Type", "Authorization"],
-        exposedHeaders: ["Authorization"]
+        credentials: true
     })
 );
 
-// Database connection
+// DB connect
 connectDB();
 
 // Routes
@@ -54,8 +49,5 @@ app.use("/admin", AdminGetService);
 app.use("/admin", AdminPostService);
 app.use("/api", DisplayRoute);
 
-// Start server
-app.listen(process.env.PORT, () =>
-    console.log("Server running on", process.env.PORT)
-);
-
+// ❗ EXPORT app instead of listen()
+module.exports = app;
