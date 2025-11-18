@@ -28,19 +28,25 @@ const allowedOrigins = [
 app.use(
     cors({
         origin: function (origin, callback) {
+            // Allow requests with no origin (like mobile apps or curl requests)
             if (!origin) return callback(null, true);
             if (allowedOrigins.includes(origin)) {
                 callback(null, true);
             } else {
-                callback(new Error("Not allowed by CORS"), false);
+                callback(new Error("Not allowed by CORS"));
             }
         },
         credentials: true
     })
 );
 
-// DB connect
-connectDB();
+// DB connect (Added error handling to prevent crash)
+connectDB().catch(err => console.error("Database connection failed:", err));
+
+// Simple Route to check if Backend is Alive
+app.get("/", (req, res) => {
+    res.json({ message: "Backend is working!" });
+});
 
 // Routes
 app.use("/admin", adminRoutes);
@@ -49,5 +55,15 @@ app.use("/admin", AdminGetService);
 app.use("/admin", AdminPostService);
 app.use("/api", DisplayRoute);
 
-// ❗ EXPORT app instead of listen()
-module.exports = app;
+// --- THE HYBRID SETUP ---
+const PORT = process.env.PORT || 5000;
+
+// If running on Vercel, export the app
+if (process.env.VERCEL) {
+    module.exports = app;
+} else {
+    // If running locally, listen on port
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
