@@ -1,0 +1,37 @@
+.SubscribeList-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 25px;
+
+    background: var(--admin-bg-secondary);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+
+    box-shadow: var(--admin-shadow);
+    backdrop-filter: blur(12px);
+}
+
+.SubscribeList-title {
+    color: var(--admin-text-secondary);
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 1.6rem;
+}
+
+.SubscribeList-empty {
+    text-align: center;
+    color: var(--admin-text-primary);
+    opacity: 0.8;
+}
+
+.SubscribeList-item {
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--admin-border);
+    margin-bottom: 16px;
+}
+
+.SubscribeList-item strong {
+    color: var(--admin-text-secondary);
+}

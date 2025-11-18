@@ -1,0 +1,21 @@
+:root {
+  /* Admin Dark Theme */
+  --admin-bg-primary: #0f172a;
+  /* deep navy */
+  --admin-bg-secondary: rgba(45, 55, 72, 0.6);
+  --admin-text-primary: #edf2f7;
+  --admin-text-secondary: #76e4f7;
+  --admin-accent: #f56565;
+  --admin-border: rgba(74, 85, 104, 0.5);
+  --admin-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0b1020, #101b34, #0f1a2e);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--admin-text-primary);
+  font-family: "Poppins", sans-serif;
+}

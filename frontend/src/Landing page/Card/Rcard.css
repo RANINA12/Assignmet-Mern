@@ -1,0 +1,81 @@
+/* ============================= */
+/*          REVIEW CARD          */
+/* ============================= */
+
+.Rcard {
+    width: 100%;
+    max-width: 260px;
+
+    background: var(--bg-secondary-dark);
+    border-radius: 18px;
+    padding: 22px 18px;
+    margin: 15px auto;
+
+    border: 1px solid var(--accent-secondary-dark);
+    box-shadow: var(--shadow-dark);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.Rcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================= */
+/*          CIRCULAR IMAGE       */
+/* ============================= */
+
+.Rimage {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    margin: 0 auto 15px auto;
+    display: block;
+
+    border: 3px solid var(--accent-primary-dark);
+    box-shadow: 0 0 12px rgba(245, 101, 101, 0.25);
+}
+
+/* ============================= */
+/*        DESCRIPTION SMALL      */
+/* ============================= */
+
+.Rdescription {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: rgba(237, 242, 247, 0.75);
+}
+
+/* ============================= */
+/*        NAME (largest)         */
+/* ============================= */
+
+.Rname {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-secondary-dark);
+    margin-bottom: 6px;
+
+    text-shadow: 0 0 10px rgba(118, 228, 247, 0.35);
+}
+
+/* ============================= */
+/*     DESIGNATION (bold)        */
+/* ============================= */
+
+.Designation {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary-dark);
+    margin-top: 0;
+}

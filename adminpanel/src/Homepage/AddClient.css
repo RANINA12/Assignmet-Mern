@@ -1,0 +1,75 @@
+.Addclient-component {
+    max-width: 520px;
+    margin: 40px auto;
+    padding: 26px 30px;
+
+    background: var(--admin-bg-secondary);
+    border-radius: 14px;
+
+    border: 1px solid var(--admin-border);
+    box-shadow: var(--admin-shadow);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.Addclient-component form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Labels */
+.Addclient-component label {
+    color: var(--admin-text-secondary);
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Input fields */
+.Addclient-component input {
+    width: 100%;
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    border: 1px solid var(--admin-border);
+
+    color: var(--admin-text-primary);
+    outline: none;
+    transition: 0.2s;
+}
+
+/* Shinier border on focus */
+.Addclient-component input:focus {
+    border-color: var(--admin-accent);
+}
+
+/* File upload input */
+.Addclient-component input[type="file"] {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--admin-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Submit button */
+.Addclient-component button {
+    padding: 12px;
+    margin-top: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 10px;
+
+    color: var(--admin-text-primary);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.Addclient-component button:hover {
+    background: var(--admin-accent);
+    color: white;
+    transform: translateY(-2px);
+}

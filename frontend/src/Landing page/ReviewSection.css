@@ -1,0 +1,133 @@
+/* ============================= */
+/*       REVIEW PAGE WRAPPER     */
+/* ============================= */
+
+.Review-component {
+    width: 95%;
+    margin: auto;
+    padding: 40px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    justify-items: center;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .Review-component {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .Review-component {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================= */
+/*      EMPTY STATE (Glassy)     */
+/* ============================= */
+
+.ReviewEmpty {
+    width: 90%;
+    padding: 16px 22px;
+    margin: 50px auto;
+
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-primary-dark);
+
+    background: var(--bg-secondary-dark);
+    border: 1px solid var(--accent-secondary-dark);
+    box-shadow: var(--shadow-dark);
+    border-radius: 14px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* ============================= */
+/*     FLOATING SVG SHAPES       */
+/* ============================= */
+
+.Review-component::before,
+.Review-component::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
+    animation: floatReviewShapes 10s ease-in-out infinite;
+}
+
+/* Left bottom */
+.Review-component::before {
+    left: -40px;
+    bottom: -20px;
+    background-image: url("/assets/triangle.svg");
+}
+
+/* Right top */
+.Review-component::after {
+    right: -35px;
+    top: -40px;
+    background-image: url("/assets/cube.svg");
+}
+
+@keyframes floatReviewShapes {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.ProductsTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-secondary-dark);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px rgba(118, 228, 247, 0.35);
+}
+
+.ReviewSection {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    padding: 40px 0;
+    border-radius: 12px;
+    width: 100%;
+    margin: 50px 0;
+}
+
+
+/* Smaller shapes on mobile */
+@media (max-width: 768px) {
+
+    .Review-component::before,
+    .Review-component::after {
+        width: 130px;
+        height: 130px;
+        opacity: 0.08;
+    }
+}

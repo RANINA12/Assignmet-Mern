@@ -1,0 +1,79 @@
+/* Center the login box */
+.AdminLogin-Wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #0b1020, #101b34, #0f1a2e);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.AdminLogin-Box {
+    width: 350px;
+
+    background: var(--admin-bg-secondary);
+    padding: 28px 30px;
+    border-radius: 14px;
+
+    border: 1px solid var(--admin-border);
+    box-shadow: var(--admin-shadow);
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+}
+
+.AdminLogin-Box h2 {
+    color: var(--admin-text-secondary);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+/* Input fields */
+.AdminLogin-Box input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+    border: 1px solid var(--admin-border);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--admin-text-primary);
+
+    outline: none;
+    transition: 0.2s;
+}
+
+.AdminLogin-Box input:focus {
+    border-color: var(--admin-accent);
+}
+
+/* Error text */
+.AdminLogin-Error {
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Submit button */
+.AdminLogin-Box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--admin-text-primary);
+    transition: 0.25s ease;
+}
+
+.AdminLogin-Box button:hover {
+    background: var(--admin-accent);
+    color: white;
+    transform: translateY(-2px);
+}

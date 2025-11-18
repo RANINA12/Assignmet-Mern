@@ -1,0 +1,111 @@
+/* PAGE WRAPPER */
+.ProductsPage {
+    width: 95%;
+    margin: auto;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* TITLE */
+.ProductsTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-secondary-dark);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px rgba(118, 228, 247, 0.35);
+}
+
+/* EMPTY STATE */
+.NilProduct {
+    width: 90%;
+    margin: 60px auto;
+    padding: 18px 25px;
+    text-align: center;
+
+    font-size: 1.2rem;
+    color: var(--text-primary-dark);
+
+    background: var(--bg-secondary-dark);
+    border-radius: 14px;
+    border: 1px solid var(--accent-secondary-dark);
+    box-shadow: var(--shadow-dark);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* GRID LAYOUT (4-2-1) */
+.Pcards-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    justify-items: center;
+}
+
+@media (max-width: 992px) {
+    .Pcards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .Pcards-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FLOATING SHAPES */
+.ProductsPage::before,
+.ProductsPage::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
+    animation: floatProductShapes 10s infinite ease-in-out;
+}
+
+.ProductsPage::before {
+    left: -40px;
+    bottom: -30px;
+    background-image: url("/assets/triangle.svg");
+}
+
+.ProductsPage::after {
+    right: -30px;
+    top: -50px;
+    background-image: url("/assets/cube.svg");
+}
+
+@keyframes floatProductShapes {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-15px) translateX(10px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .ProductsPage::before,
+    .ProductsPage::after {
+        width: 140px;
+        height: 140px;
+        opacity: 0.09;
+    }
+}
