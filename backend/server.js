@@ -20,10 +20,11 @@ app.use(cookieParser());
 
 // Allow multiple origins
 const allowedOrigins = [
+    "https://assignmetadminpanel.vercel.app",
+    "https://assignmentflipr.vercel.app"
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://your-admin-panel.com",
-    "https://your-client-site.com"
+   
 ];
 
 app.use(
@@ -57,3 +58,4 @@ app.use("/api", DisplayRoute);
 app.listen(process.env.PORT, () =>
     console.log("Server running on", process.env.PORT)
 );
+
