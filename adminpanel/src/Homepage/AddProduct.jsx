@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import './AddProduct.css'
+import './Addproduct.css'
 import { toast } from "react-toastify";
 import CropImage from "./CropImage"
 

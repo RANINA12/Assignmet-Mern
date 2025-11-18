@@ -1,7 +1,3 @@
-/* ============================= */
-/*          PRODUCT CARD         */
-/* ============================= */
-
 .Pcard {
     width: 100%;
     max-width: 260px;
@@ -22,15 +18,10 @@
     position: relative;
 }
 
-/* Hover lift */
 .Pcard:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
 }
-
-/* ============================= */
-/*        CARD IMAGE             */
-/* ============================= */
 
 .Pimagepath {
     width: 100%;
@@ -41,10 +32,6 @@
     box-shadow: var(--shadow-dark);
 }
 
-/* ============================= */
-/*        NAME (highlight)       */
-/* ============================= */
-
 .Pname {
     font-size: 1.25rem;
     font-weight: 600;
@@ -52,9 +39,6 @@
     margin-bottom: 8px;
 }
 
-/* ============================= */
-/*      DESCRIPTION (light)      */
-/* ============================= */
 
 .Pdescription {
     font-size: 0.95rem;
@@ -62,6 +46,3 @@
     margin-bottom: 18px;
     line-height: 1.45;
 }
-
-/* ============================= */
-/*      BUTTON (local style*
